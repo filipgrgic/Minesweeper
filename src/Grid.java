@@ -1,19 +1,12 @@
-package Mechanics;
-
 public class Grid {
     final int gridCol = 16;
     final int gridRow = 16;
     final int numberOfBombs = 40;
     private int[][] grid;
 
-    public static void main(String[] args) {
-        Grid test = new Grid();
-        test.placeBombs();
-        System.out.println(test);
-    }
-
     public Grid() {
         this.grid = new int[gridRow][gridCol];
+        this.placeBombs();
     }
 
     private void placeBombs() {
@@ -94,15 +87,7 @@ public class Grid {
         return count;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for (int i = 0; i < gridRow; i++) {
-            for (int j = 0; j < gridCol; j++) {
-                s.append(this.grid[i][j]).append(" ");
-            }
-            s.append("\n");
-        }
-        return s.toString();
+    public int getValue(int i, int j) {
+        return this.grid[i][j];
     }
 }
